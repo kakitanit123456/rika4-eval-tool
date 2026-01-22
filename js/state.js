@@ -1,17 +1,25 @@
 /**
  * state.js
- * ----------------------------
- * アプリ全体で使う「状態」を管理する
- *
- * ・児童一覧
- * ・現在選択中の児童
- * ・提出物データ
- *
- * ※ 画面操作・DOM操作は行わない
- * ※ 純粋に「データ置き場」
+ * 役割：
+ * - アプリ全体の「状態（state）」を管理する
+ * - defaultData（初期データの設計図）を持つ
  */
 
-export const state = {
-  students: ["児童A", "児童B"],
-  currentStudent: "児童A"
+console.log("state.js loaded");
+
+// 初期データ（設計図）
+const defaultData = {
+  students: ["（サンプル）児童A", "（サンプル）児童B"],
+  assignments: [
+    { id: "a1", title: "ノート提出" },
+    { id: "a2", title: "まとめシート" },
+  ],
+  assignStatusByStudent: {} // 児童×提出物の提出状態（あとで自動生成）
+};
+
+// アプリ状態（あとで storage.js の loadData() の結果を入れる）
+const state = {
+  data: null,
+  currentStudent: null,
+  currentAssignId: null,
 };

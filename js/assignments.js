@@ -1,29 +1,11 @@
 /**
  * assignments.js
  * 役割：
- * - 提出物に関する処理
+ * - 提出物（課題）の管理を担当
  */
 
-function renderAssignments() {
-  const app = document.getElementById("app");
-  if (!app) return;
+console.log("assignments.js loaded");
 
-  app.innerHTML = `
-    <h2>提出物</h2>
-    <button id="addAssign">追加</button>
-    <ul id="assignList"></ul>
-  `;
-
-  document.getElementById("addAssign").onclick = () => {
-    state.assignments.push("新しい提出物");
-    saveState();
-    renderAssignments();
-  };
-
-  const ul = document.getElementById("assignList");
-  state.assignments.forEach(a => {
-    const li = document.createElement("li");
-    li.textContent = a;
-    ul.appendChild(li);
-  });
+function testAssignments() {
+  console.log("assignments function called");
 }
